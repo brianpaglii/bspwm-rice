@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+
+bspc monitor -d I II III IV V
+
+bspc config border_width         2
+bspc config window_gap           6
+bspc config top_padding          5
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+#Autostart
+
+sxhkd &
+picom --config $HOME/.config/picom/picom.conf &
+feh --bg-fill ~/.config/wallpaper.png
+dunst &
+$HOME/.config/polybar/launch.sh
